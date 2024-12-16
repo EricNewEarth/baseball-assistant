@@ -1,0 +1,5 @@
+Version 1.0
+- Added launch menu with every team page
+- Added current depth chart pages for every team
+- Added injured list widget under depth chart
+- Added toggle to show or hide injured list players in depth chart
