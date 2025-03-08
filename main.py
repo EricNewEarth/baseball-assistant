@@ -1,4 +1,3 @@
-# Import module files
 import menu
 import loading_screen
 
@@ -8,5 +7,5 @@ def main():
     menu.build_menu()
     loading_window.mainloop()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
