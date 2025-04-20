@@ -1,0 +1,249 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.logo-image {
+    height: 75px;
+}
+
+nav {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.league {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* American League */
+.league:nth-child(1) {
+    background-color: #002D72;
+    color: white;
+    padding: 10px;
+}
+
+/* National League */
+.league:nth-child(2) {
+    background-color: #D50032;
+    color: white;
+    padding: 10px;
+}
+
+.league h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.division-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.division {
+    width: 32%;
+    position: relative;
+}
+
+.division-title {
+    background-color: #cccccc;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.division-title:hover {
+    background-color: #aaaaaa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.teams {
+    font-size: 16px;
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 100;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.division:hover .teams {
+    display: block;
+}
+
+.teams li, .teams a {
+    padding: 20px 15px;
+    color: white;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.teams li:hover {
+    filter: brightness(115%);
+    transform: translateX(5px);
+    padding-left: 20px;
+}
+
+.orioles {
+    background-color: #DF4601;
+}
+
+.red-sox {
+    background-color: #BD3039;
+}
+
+.yankees {
+    background-color: #0C2340;
+}
+
+.rays {
+    background-color: #8FBCE6;
+}
+
+.blue-jays {
+    background-color: #134A8E;
+}
+
+.white-sox {
+    background-color: #27251F;
+}
+
+.guardians {
+    background-color: #E50022;
+}
+
+.tigers {
+    background-color: #0C2340;
+}
+
+.royals {
+    background-color: #004687;
+}
+
+.twins {
+    background-color: #002B5C;
+}
+
+.athletics {
+    background-color: #003831;
+}
+
+.astros {
+    background-color: #EB6E1F;
+}
+
+.angels {
+    background-color: #BA0021;
+}
+
+.mariners {
+    background-color: #005C5C;
+}
+
+.rangers {
+    background-color: #C0111F;
+}
+
+.braves {
+    background-color: #CE1141;
+}
+
+.marlins {
+    background-color: #00A3E0;
+}
+
+.mets {
+    background-color: #002D72;
+}
+
+.phillies {
+    background-color: #E81828;
+}
+
+.nationals {
+    background-color: #AB0003;
+}
+
+.cubs {
+    background-color: #0E3386;
+}
+
+.reds {
+    background-color: #C6011F;
+}
+
+.brewers {
+    background-color: #12284b;
+}
+
+.pirates {
+    background-color: #FDB827;
+}
+
+.cardinals {
+    background-color: #C41E3A;
+}
+
+.diamondbacks {
+    background-color: #A71930;
+}
+
+.rockies {
+    background-color: #333366;
+}
+
+.dodgers {
+    background-color: #005A9C;
+}
+
+.padres {
+    background-color: #2F241D;
+}
+
+.giants {
+    background-color: #FD5A1E;
+}
+
+footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #003087;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

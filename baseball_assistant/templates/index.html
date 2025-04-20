@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Assistant</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="/static/favicons/favicon.ico">
+    <link rel="manifest" href="/static/favicons/site.webmanifest">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/baseball-assistant.png') }}" alt="Baseball Assistant Logo" class="logo-image">
+            </a>
+        </div>
+        <nav>
+            <div class="league">
+                <h1>American League</h1>
+                <div class="division-container">
+                    <div class="division" id="east">
+                        <div class="division-title">East</div>
+                        <ul class="teams">
+                            <li class="orioles"><a href="/team/orioles">Baltimore Orioles</a></li>
+                            <li class="red-sox">Boston Red Sox</li>
+                            <li class="yankees">New York Yankees</li>
+                            <li class="rays">Tampa Bay Rays</li>
+                            <li class="blue-jays">Toronto Blue Jays</li>
+                        </ul>
+                    </div>
+                    <div class="division" id="central">
+                        <div class="division-title">Central</div>
+                        <ul class="teams">
+                            <li class="white-sox">Chicago White Sox</li>
+                            <li class="guardians">Cleveland Guardians</li>
+                            <li class="tigers">Detroit Tigers</li>
+                            <li class="royals">Kansas City Royals</li>
+                            <li class="twins">Minnesota Twins</li>
+                        </ul>
+                    </div>
+                    <div class="division" id="west">
+                        <div class="division-title">West</div>
+                        <ul class="teams">
+                            <li class="athletics">Athletics</li>
+                            <li class="astros">Houston Astros</li>
+                            <li class="angels">Los Angeles Angels</li>
+                            <li class="mariners">Seattle Mariners</li>
+                            <li class="rangers">Texas Rangers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="league">
+                <h1>National League</h1>
+                <div class="division-container">
+                    <div class="division" id="east">
+                        <div class="division-title">East</div>
+                        <ul class="teams">
+                            <li class="braves">Atlanta Braves</li>
+                            <li class="marlins">Miami Marlins</li>
+                            <li class="mets">New York Mets</li>
+                            <li class="phillies">Philadelphia Phillies</li>
+                            <li class="nationals">Washington Nationals</li>
+                        </ul>
+                    </div>
+                    <div class="division" id="central">
+                        <div class="division-title">Central</div>
+                        <ul class="teams">
+                            <li class="cubs">Chicago Cubs</li>
+                            <li class="reds">Cincinnati Reds</li>
+                            <li class="brewers">Milwaukee Brewers</li>
+                            <li class="pirates">Pittsburgh Pirates</li>
+                            <li class="cardinals">St. Louis Cardinals</li>
+                        </ul>
+                    </div>
+                    <div class="division" id="west">
+                        <div class="division-title">West</div>
+                        <ul class="teams">
+                            <li class="diamondbacks">Arizona Diamondbacks</li>
+                            <li class="rockies">Colorado Rockies</li>
+                            <li class="dodgers">Los Angeles Dodgers</li>
+                            <li class="padres">San Diego Padres</li>
+                            <li class="giants">San Francisco Giants</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <footer>
+        <p>&copy; 2025 <a href="https://www.ericterranova.com" target="_blank">Eric Terranova</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
