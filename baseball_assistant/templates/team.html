@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ team_name_display }} - Baseball Assistant</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="/static/favicons/favicon.ico">
+    <link rel="manifest" href="/static/favicons/site.webmanifest">
+</head>
+<body class="{{ team_name }}">
+    <header>
+        <div class="logo-container">
+            <a href="/">
+                <img src="/static/images/baseball-assistant.png" alt="Baseball Assistant Logo" class="logo-image">
+            </a>
+        </div>
+    </header>
+
+    <div class="team-window">
+        <div class="team-content">
+            <div class="left-column">
+                <div class="team-logo-section">
+                    <img src="/static/images/teams/{{ team_name }}.png" alt="{{ team_name_display }} Logo" class="team-logo-img">
+                    <div class="team-name team-accent">{{ team_name_display }}</div>
+                </div>
+                
+                <div class="schedule-glance">
+                    <div class="section-title schedule-title">Schedule Glance</div>
+                    <div class="scrollable-content">
+                        {% if schedule %}
+                            {% for game in schedule %}
+                                <div class="schedule-item">
+                                    <div class="schedule-date">{{ game.game_date.strftime('%m/%d') }}</div>
+                                    <div class="schedule-opponent">
+                                        {% if game.away_name == team_name_display %}
+                                            @ {{ game.home_name }}
+                                        {% else %}
+                                            vs {{ game.away_name }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="schedule-time">{{ game.game_time }}</div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>Schedule data unavailable</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-column">
+                <div class="team-navigation">
+                    <div class="nav-toggle team-toggle">Team Page</div>
+                    <div class="nav-toggle stats-toggle">Stats Page</div>
+                </div>
+                
+                <div class="depth-chart">
+                    <div class="section-title depth-chart-title">Depth Chart</div>
+                    <div class="scrollable-content">
+                        <!-- Depth chart content will go here -->
+                        <p>{{ team_name_display }} depth chart information not yet available</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="injured-list">
+                    <div class="section-title injured-list-title">Injured List</div>
+                    <div class="scrollable-content">
+                        <!-- Injured list content will go here -->
+                        <p>{{ team_name_display }} injured list information not yet available</p>
+                    </div>
+                </div>
+                
+                <div class="transaction-feed">
+                    <div class="section-title transaction-title">Transaction Feed</div>
+                    <div class="scrollable-content">
+                        <!-- Transaction feed content will go here -->
+                        <p>{{ team_name_display }} transaction feed information not yet available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 <a href="https://www.ericterranova.com" target="_blank">Eric Terranova</a>. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get team accent color from CSS to apply to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the team's background color from the body class
+            const computedStyle = window.getComputedStyle(document.body);
+            const teamColor = computedStyle.backgroundColor;
+            
+            // Apply team color to accent elements
+            const accentElements = document.querySelectorAll('.team-accent');
+            accentElements.forEach(element => {
+                element.style.borderBottomColor = teamColor;
+            });
+            
+            // Check if team color is dark to apply appropriate text colors
+            function isColorDark(color) {
+                // Extract RGB values (assuming format is "rgb(r, g, b)")
+                const rgb = color.match(/\d+/g);
+                if (rgb) {
+                    const brightness = (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) / 1000;
+                    return brightness < 128; // If brightness is less than 128, color is dark
+                }
+                return false;
+            }
+            
+            if (isColorDark(teamColor)) {
+                // Apply light text class to elements that need better contrast on dark backgrounds
+                document.body.classList.add('light-text');
+            }
+        });
+    </script>
+</body>
+</html>
